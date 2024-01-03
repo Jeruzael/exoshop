@@ -1,0 +1,117 @@
+@mixin max-min(
+    $max-h: 3000px,
+    $max-w:  3000px,
+    $min-h: 30px,
+    $min-w: 300px,
+){
+    max-width: $max-w;
+    max-height: $max-h;
+    min-width: $min-w;
+    min-height: $min-h;
+}
+
+@mixin rez-size($w: 100vw, $h: 100vh){
+    width: $w;
+    height: $h;
+    //border: 1px solid red;  
+}
+
+@mixin res-cont(
+    $or: row,
+    $jc: center,
+    $ai: center,
+    $pos: relative
+    ){
+        display: flex;
+        position: $pos;
+        flex-flow: $or wrap;
+        justify-content: $jc;
+        align-items: $ai;
+}
+
+%default-cont {
+    @include res-cont($or: column, $jc: start);
+    @include rez-size($h: auto);
+    @include max-min($min-w: 300, $min-h: 700);
+    //background-color: yellow;
+    
+}
+
+%header {
+    @include res-cont($pos: fixed);
+    @include rez-size($h: auto);
+    @include max-min($min-w: 300px, $min-h: 10vh);
+    //background-color: pink;    
+    z-index: 3;
+}
+
+%header_cont {
+    @include res-cont($jc: space-between);
+    @include rez-size($w: 99vw, $h: auto);
+    @include max-min($min-w: 300px, $min-h: 9vh);
+    //background-color: orange;
+    z-index: 2;
+}
+
+%header_logo {
+    @include res-cont($jc: center, $ai: center);
+    @include rez-size($w: 5vw, $h: 5vh);
+    //background-color: brown;
+    z-index: 3;
+}
+
+%header_navs {
+    @include max-min($min-w: 200px, $min-h: 5vh);
+    @include res-cont($jc: space-between);
+    @include rez-size($w: 25vw, $h: auto);  
+    //background-color: brown;
+    z-index: 3;
+}
+
+%body {
+    margin-top: 10vh;
+    @include max-min($min-w: 200px, $min-h: 900px);
+    @include res-cont($jc: space-evenly);
+    @include rez-size($w: 100vw, $h: auto);
+    //background-color: green;
+    z-index: 1;
+}
+
+%dropdown_signedin {
+    @include max-min($min-w: 0px, $min-h: 5vh);
+    @include res-cont($jc: space-around);
+    @include rez-size($w: 7vw, $h: 5vh);
+    //background-color: blue;    
+}
+
+%dp_img {
+    @include max-min($min-w: 0px, $min-h: 0px);
+    @include res-cont($jc: space-evenly);
+    @include rez-size($w: 50px, $h: 50px);
+    //background-color: red;
+    border: 1px solid #21375b;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+%arrow {
+    cursor: pointer;
+    //background-color: violet;
+    
+    @include rez-size($w: 30px, $h: 20px);
+}
+
+%sideNav_signedin {
+    @include max-min($min-w: 200px, $min-h: 0px);
+    @include res-cont($or: column, $jc: start);
+    @include rez-size($w: 30vw, $h: 100vh);
+}
+
+%sideNav_items {
+    @include max-min($min-w: 100px, $min-h: 30px);
+    @include res-cont;
+    @include rez-size($w: 20vw, $h: 50px); 
+    border-radius: 5px;
+    transition: 0.2s;
+    z-index: 2;        
+}

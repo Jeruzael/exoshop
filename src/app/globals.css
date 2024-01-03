@@ -1,4 +1,9 @@
 :root {
+  --exo-pri: #99ac71;
+  --exo-sec: #7cac71;
+  --exo-ter: #aca171;
+  --exo-light: #e8f0e6;
+
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -93,6 +98,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    z-index: -5;
 }
 
 a {
@@ -104,4 +110,17 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #495d7e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #21375b;
 }

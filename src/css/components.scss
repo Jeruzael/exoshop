@@ -1,0 +1,40 @@
+@use 'presets';
+
+.cont {
+    @extend %default-cont;
+}
+
+.header{
+    @extend %header;
+    .header_cont {
+        @extend %header_cont;
+        .header_logo {
+            @extend %header_logo;
+        }
+        .header_navs {
+            @extend %header_navs;
+        }
+    }
+}
+
+.dropdown_signedin {
+    @extend %dropdown_signedin;
+    .dp_img {
+        @extend %dp_img;
+    }
+    .arrow {
+        @extend %arrow;
+    }
+    .sideNav_items {
+        @extend %sideNav_items;                
+    }
+
+    .sideNav_items:hover {
+        color: black;
+        background-color: var(--exo-ter) !important;
+    }
+}
+
+.body {
+    @extend %body;
+}

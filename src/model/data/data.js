@@ -1,6 +1,6 @@
 'use strict';
 const {MongoClient, ServerApiVersion} = require('mongodb')
-const uri = 'mongodb+srv://Jeruzael08:QUk6aXc96OVjx22v@testing.yzbuj1p.mongodb.net/?retryWrites=true&w=majority'
+const uri = process.env.MONGO_DB_KEY
 
 const client = new MongoClient(uri, {
     ServerApi: {

@@ -32,7 +32,7 @@ const Signedin = () => {
 }
 
 export default function RootLayout({children}){    
-    const [status, setStatus] = useState(false)
+    const [status, setStatus] = useState(true)
     return(
         <>
             <html lang="en">
